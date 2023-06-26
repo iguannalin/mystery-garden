@@ -34,10 +34,6 @@ body {
   color: #ffe245;
 }
 
-#text {
-  transition: all ease-in-out 2s;
-}
-
 #parent {
   display: flex;
   flex-wrap: wrap;
@@ -51,5 +47,6 @@ button {
   font-size: 64px;
   width: 25px;
   height: 60px;
+  padding: 16px 12px;
   /* filter: invert(0.4) sepia(1); */
 }
