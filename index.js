@@ -1,6 +1,7 @@
 window.addEventListener("load", () => {
   const parent = document.getElementById("parent");
   let flowers = ["🌹","🥀","🌺","🪻","🌻","🌼","🌷","🌱","🪴","🌲","🌳","🌴","🌵","🌾","🌿","☘️","🍀", "🐸"];
+  let count = 0;
 
   for (let i = 1; i < 10; i++) {
     let button = document.createElement("button");
@@ -11,5 +12,7 @@ window.addEventListener("load", () => {
   function buttonClicked(e) {
     e.target.innerText = flowers[Math.floor(Math.random()*flowers.length)];
     e.target.onclick = {};
+    count++;
+    if (count >= 0) document.getElementById('text').innerText = "🌞"
   }
 });
