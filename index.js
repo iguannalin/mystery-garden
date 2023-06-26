@@ -13,6 +13,6 @@ window.addEventListener("load", () => {
     e.target.innerText = flowers[Math.floor(Math.random()*flowers.length)];
     e.target.onclick = {};
     count++;
-    if (count >= 0) document.getElementById('text').innerText = "🌞"
+    if (count >= 9) document.getElementById('text').innerText = "🌞"
   }
 });
