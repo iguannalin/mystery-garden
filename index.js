@@ -1,6 +1,6 @@
 window.addEventListener("load", () => {
   const parent = document.getElementById("parent");
-  const heading = document.getElementById("heading");
+  const text = document.getElementById("text");
   let count = 0;
 
   let buttons = [];
@@ -16,6 +16,9 @@ window.addEventListener("load", () => {
     e.target.innerText = flowers[Math.floor(Math.random()*flowers.length)];
     e.target.onclick = {};
     count++;
-    if (count >= 9) heading.innerHTML = "<h2>🌞</h2>"
+    if (count >= 9) {
+      text.innerText = "🌞"
+      text.style.transform = "scale(5.4)";
+    }
   }
 });

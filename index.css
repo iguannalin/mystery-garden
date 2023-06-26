@@ -34,9 +34,8 @@ body {
   color: #ffe245;
 }
 
-h2 {
-  font-size: 9em;
-  margin: 0;
+#text {
+  transition: all ease-in-out 2s;
 }
 
 #parent {
