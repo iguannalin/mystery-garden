@@ -1,26 +1,21 @@
 window.addEventListener("load", () => {
-  let wOffset = window.innerWidth/6;
-  let hOffset = window.innerHeight/6;
-  let w = window.innerWidth - (wOffset);
-  let h = window.innerHeight - hOffset;
-
   const parent = document.getElementById("parent");
   const heading = document.getElementById("heading");
+  let count = 0;
 
   let buttons = [];
-  let flowers = ["🌹","🥀","🌺","🪻","🌻","🌼","🌷","🌱","🪴","🌲","🌳","🌴","🌵","🌾","🌿","☘️","🍀"];
+  let flowers = ["🌹","🥀","🌺","🪻","🌻","🌼","🌷","🌱","🪴","🌲","🌳","🌴","🌵","🌾","🌿","☘️","🍀", "🐸"];
 
   for (let i = 1; i < 10; i++) {
     let button = document.createElement("button");
     button.innerText = "🕳"
     button.onclick = buttonClicked;
-    // button.style.left = `${(i%3) * 100}px`;
-    // button.style.top = `${Math.floor((i-1)/3) * 100}px`;
-    // console.log(i, button.style.top)
     parent.appendChild(button);
   }
-// Math.floor(i/3)+i%3
-  function buttonClicked(el) {
-    console.log(el);
+  function buttonClicked(e) {
+    e.target.innerText = flowers[Math.floor(Math.random()*flowers.length)];
+    e.target.onclick = {};
+    count++;
+    if (count >= 9) heading.innerHTML = "<h2>🌞</h2>"
   }
 });
