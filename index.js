@@ -3,33 +3,24 @@ window.addEventListener("load", () => {
   let hOffset = window.innerHeight/6;
   let w = window.innerWidth - (wOffset);
   let h = window.innerHeight - hOffset;
+
   const parent = document.getElementById("parent");
   const heading = document.getElementById("heading");
-  let button = document.createElement("button");
-  button.innerText = "🐹"
-  
-  reposition(button);
-  parent.appendChild(button);
-  
-  button.onclick = () => {
-    const hole = document.createElement("p");
-    hole.innerText = "🕳";
-    hole.style.top = button.style.top;
-    hole.style.left = button.style.left;
-    heading.innerHTML = `<h1>:)</h1>`;
-    button.style.display = "none";
-    parent.appendChild(hole);
-    setTimeout(() => {reposition(button)}, 700);
-  };
 
-  function reposition(elem) {
-    heading.innerHTML = `<h1>:(</h1>`;
-    elem.style.display = "block";
-    elem.style.left = `${Math.max(getRandomInt(w),wOffset)}px`;
-    elem.style.top = `${Math.max(getRandomInt(h),hOffset)}px`;
+  let buttons = [];
+  let flowers = ["🌹","🥀","🌺","🪻","🌻","🌼","🌷","🌱","🪴","🌲","🌳","🌴","🌵","🌾","🌿","☘️","🍀"];
+
+  for (let i = 1; i < 10; i++) {
+    let button = document.createElement("button");
+    button.innerText = "🕳"
+    button.onclick = buttonClicked;
+    // button.style.left = `${(i%3) * 100}px`;
+    // button.style.top = `${Math.floor((i-1)/3) * 100}px`;
+    // console.log(i, button.style.top)
+    parent.appendChild(button);
   }
-
-  function getRandomInt(max) {
-    return Math.floor(Math.random() * max);
+// Math.floor(i/3)+i%3
+  function buttonClicked(el) {
+    console.log(el);
   }
 });
